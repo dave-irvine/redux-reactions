@@ -1,0 +1,29 @@
+{
+  "name": "redux-reaction",
+  "version": "1.0.0",
+  "description": "Fire a callback when actions are dispatched",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "Dave Irvine <dave@daveirvine.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.2",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0"
+  }
+}
