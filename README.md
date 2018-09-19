@@ -33,12 +33,12 @@ First, register the middleware:
 
 ```js
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { createReactionMiddleware } from 'redux-reaction';
+import { createReactionsMiddleware } from 'redux-reactions';
 ​
 const todoApp = combineReducers(reducers);
 const store = createStore(
   todoApp,
-  applyMiddleware(createReactionMiddleware())
+  applyMiddleware(createReactionsMiddleware())
 );
 ```
 
@@ -67,7 +67,7 @@ And now in your [container](https://redux.js.org/basics/usagewithreact#implement
 
 ```js
 import { connect } from 'react-redux';
-import { registerReactions } from 'redux-reaction';
+import { registerReactions } from 'redux-reactions';
 
 import TodoList from 'components/TodoList';
 import * as reactions from './reactions';

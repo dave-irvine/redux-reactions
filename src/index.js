@@ -9,7 +9,7 @@ function executeReactions(dispatch, getState, action) {
   });
 }
 
-export function createReactionMiddleware() {
+export function createReactionsMiddleware() {
   return ({ dispatch, getState }) => next => (action) => {
     if (typeof action !== 'object' || !reactions[action.type]) {
       return next(action);
