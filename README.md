@@ -82,3 +82,7 @@ export default connect(
   mapDispatchToProps
 )(TodoList);
 ```
+
+## Thanks
+
+Many thanks to [Ben Anderson](https://github.com/banderson) for giving up the redux-reactions npm package name.
