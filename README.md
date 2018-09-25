@@ -50,7 +50,7 @@ Next up, just like your [actions](https://redux.js.org/basics/exampletodolist#ac
 import * as constants from "./constants";
 
 export function handleNewTodo(addReaction) {
-  addReaction(constants.ADD_TODO, (dispatch, getState) => {
+  addReaction(constants.ADD_TODO, (dispatch, getState, action) => {
     /*
        * Do something, but don't dispatch ADD_TODO again or
        * you will enter a loop.

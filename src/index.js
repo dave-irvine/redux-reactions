@@ -5,7 +5,7 @@ function executeReactions(dispatch, getState, action) {
   return Object.getOwnPropertySymbols(reactions[action.type]).map((id) => {
     const reaction = reactions[action.type][id];
 
-    return reaction(dispatch, getState);
+    return reaction(dispatch, getState, action);
   });
 }
 
