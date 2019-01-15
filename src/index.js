@@ -21,9 +21,17 @@ export function createReactionsMiddleware() {
   };
 }
 
-export function addReaction(type, reaction) {
+export function addReaction(type, reaction, opts = { unique: false }) {
   if (!reactions[type]) {
     reactions[type] = {};
+  }
+
+  if (opts.unique) {
+    const existingReactions = Object.entries(reactions[type]);
+
+    if (existingReactions.length > 0) {
+      return existingReactions[0];
+    }
   }
 
   const id = Symbol(type);
