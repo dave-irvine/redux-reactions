@@ -34,16 +34,16 @@ export function addReaction(type, reaction) {
   return id;
 }
 
-export function registerReactions(reactionsToRegister) {
-  return Object.entries(reactionsToRegister).map((entry) => {
-    const [, reaction] = entry;
-
-    return reaction(addReaction);
-  });
-}
-
 export function removeHandler(id) {
   const type = idTypeMap[id];
 
   delete reactions[type][id];
+}
+
+export function registerReactions(reactionsToRegister) {
+  return Object.entries(reactionsToRegister).map((entry) => {
+    const [, reaction] = entry;
+
+    return reaction(addReaction, removeHandler);
+  });
 }
