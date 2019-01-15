@@ -27,7 +27,7 @@ export function addReaction(type, reaction, opts = { unique: false }) {
   }
 
   if (opts.unique) {
-    const existingReactions = Object.entries(reactions[type]);
+    const existingReactions = Object.getOwnPropertySymbols(reactions[type]);
 
     if (existingReactions.length > 0) {
       return existingReactions[0];
