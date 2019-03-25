@@ -1,6 +1,10 @@
 const reactions = {};
 const idTypeMap = {};
 
+function isFunction(obj) {
+  return typeof obj === 'function';
+}
+
 function executeReactions(dispatch, getState, action) {
   return Object.getOwnPropertySymbols(reactions[action.type]).map((id) => {
     const reaction = reactions[action.type][id];
@@ -49,9 +53,9 @@ export function removeHandler(id) {
 }
 
 export function registerReactions(reactionsToRegister) {
-  return Object.entries(reactionsToRegister).map((entry) => {
-    const [, reaction] = entry;
-
-    return reaction(addReaction, removeHandler);
+  Object.entries(reactionsToRegister).forEach(([, reaction]) => {
+    if (isFunction(reaction)) {
+      reaction(addReaction, removeHandler);
+    }
   });
 }
