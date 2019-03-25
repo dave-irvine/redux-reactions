@@ -4,6 +4,7 @@ module.exports = {
   },
   output: {
     filename: 'index.js',
+    globalObject: "(typeof self != 'undefined' ? self : this)",
     libraryTarget: 'umd',
   },
   mode: 'production',
