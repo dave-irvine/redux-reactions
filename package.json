@@ -1,6 +1,6 @@
 {
   "name": "redux-reactions",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Fire a callback when actions are dispatched",
   "main": "dist/index.js",
   "scripts": {
